@@ -44,7 +44,7 @@ const Basic = (props: Props) => {
       />
 
       <Select
-        {...register("typeId")}
+        {...register("typeId", { setValueAs: (v: any) => v.toString() })}
         errorMessage={errors.typeId?.message}
         isInvalid={!!errors.typeId}
         label="Type"
@@ -59,7 +59,7 @@ const Basic = (props: Props) => {
         ))}
       </Select>
       <Select
-        {...register("statusId")}
+        {...register("statusId", { setValueAs: (v: any) => v.toString() })}
         errorMessage={errors.statusId?.message}
         isInvalid={!!errors.statusId}
         label="Status"
@@ -74,7 +74,7 @@ const Basic = (props: Props) => {
         ))}
       </Select>
       <Input
-        {...register("price")}
+        {...register("price", { setValueAs: (v: any) => v.toString() })}
         errorMessage={errors.price?.message}
         isInvalid={!!errors.price}
         label="Price"
