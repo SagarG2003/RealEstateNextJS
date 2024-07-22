@@ -18,11 +18,12 @@ const Search = () => {
   }, 1000);
 
   return (
-    <div className="p-4 flex items-center justify-center bg-gradient-to-br from-sky-400 to-indigo-500">
+    <div className="pl-60 flex items-center justify-center placeholder:italic font-bold">
       <Input
+        placeholder="Search for locality, landmark...."
         onChange={(e) => handleChange(e.target.value)}
         className="w-96 shadow"
-        endContent={<MagnifyingGlassIcon className="w-4 text-slate-500 " />}
+        endContent={<MagnifyingGlassIcon className="w-6 text-slate-500 " />}
         defaultValue={searchParams.get("query") ?? ""}
       />
     </div>

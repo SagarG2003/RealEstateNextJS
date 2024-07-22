@@ -25,20 +25,21 @@ const PropertyPage = async ({ params }: Props) => {
   });
   if (!property) return notFound();
   return (
-    <div>
+    <div className="mt-6">
       <PageTitle title="Property Page" href="/" linkCaption="Back to Properties" />
       <div className="p-4">
-        <h2 className="text-2xl font-bold text-primary my-5">{property.name}</h2>
+        <h2 className="text-black text-2xl font-bold my-5">{property.name}</h2>
+        <p className="text-lg font-bold text-slate-600 mt-7 m">{property.description}</p>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="col-span-2">
             <ImagesSlider images={images} />
             <h2 className="text-2xl font-bold text-gray-700 mt-7">
-              $ {property.price} / {property.status.value}
+            INR {property.price} / {property.status.value}
             </h2>
 
-            <p className="text-sm text-slate-600 mt-7">{property.description}</p>
+            {/* <p className="text-lg font-bold text-slate-600 mt-7 m">{property.description}</p> */}
           </div>
-          <Card className="p-5 flex flex-col gap-1">
+          <Card className="p-5 flex flex-col gap-1 border-black">
             <Title title="Features" />
             <Attribute label="Bedrooms" value={property.feature?.bedrooms} />
             <Attribute label="Bathrooms" value={property.feature?.bathrooms} />

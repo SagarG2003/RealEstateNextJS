@@ -25,7 +25,7 @@ model Property {
   id          Int               @id @default(autoincrement())
   name        String
   description String
-  price       Int
+  price       String            
   userId      String
   user        User              @relation(fields: [userId], references: [id])
   typeId      Int
@@ -94,7 +94,7 @@ model PropertyStatus {
 model SubscriptionPlan {
   id                    Int             @id @default(autoincrement())
   name                  String
-  price                 Float
+  price                 String
   propertyLimit         Int
   imagePerPropertyLimit Int
   features              String

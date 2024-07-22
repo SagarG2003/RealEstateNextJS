@@ -1,5 +1,4 @@
 "use client";
-import { HomeModernIcon } from "@heroicons/react/16/solid";
 import {
   Navbar,
   NavbarContent,
@@ -12,6 +11,7 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import React, { ReactNode } from "react";
+import Search from "./Search";
 
 interface Props {
   children: ReactNode;
@@ -20,26 +20,22 @@ interface Props {
 const Appbar = ({ children }: Props) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
-    <Navbar className="shadow-md" onMenuOpenChange={setIsMenuOpen}>
+    <Navbar className="h-20 mx-auto flex justify-between bg-gradient-to-b from-[#2e2f80] to-[#5636a3] border-radius rounded-b-[70px]" onMenuOpenChange={setIsMenuOpen} >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
         <NavbarBrand>
-          <Link
-            href={"/"}
-            className="flex items-center text-primary-400 hover:text-primary-600 transition-colors"
-          >
-            <HomeModernIcon className="w-16" />
-            <p className="font-bold text-inherit">Sk Real Estate</p>
-          </Link>
+            <p className="pl-20 font-bold text-white text-xl">SG Real Estate</p>
         </NavbarBrand>
+        <Search></Search>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center"></NavbarContent>
+      <NavbarContent className="hidden sm:flex gap-4" justify="end"></NavbarContent>
       <NavbarContent justify="end">{children}</NavbarContent>
       <NavbarMenu></NavbarMenu>
+      <Button className="bg-white"><Link href="/user/_components/PurchasePlan">Premium</Link></Button>
     </Navbar>
   );
 };

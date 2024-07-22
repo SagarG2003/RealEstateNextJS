@@ -8,6 +8,7 @@ import { Button } from "@nextui-org/react";
 import React from "react";
 import UserProfilePanel from "./UserProfilePanel";
 import prisma from "@/lib/prisma";
+import PurchasePlan from "../user/subscription/_components/PurchasePlan";
 
 const signInPanel = async () => {
   const { isAuthenticated, getUser } = await getKindeServerSession();

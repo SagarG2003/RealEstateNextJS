@@ -25,9 +25,10 @@ interface Props {
 
 const PropertyCard = ({ property }: Props) => {
   return (
-    <Card className="w-72 flex flex-col hover:scale-105" shadow="md">
+    <Card className="w-72 flex flex-col hover:scale-105 border border-slate-300 hover:border-slate-400"  shadow="md">
       <Image
         radius="none"
+        alt =  "Error"
         src={
           property.id === 1
             ? property.images[0].url
@@ -43,7 +44,7 @@ const PropertyCard = ({ property }: Props) => {
           </p>
         </div>
         <div className="bg-gradient-to-br from-slate-50 to-slate-200 p-4 flex justify-between">
-          <p>${property.price.toLocaleString()}</p>
+          <p>INR {property.price.toLocaleString()}</p>
           <Link
             className="hover:text-primary-500 transition-colors"
             href={`/property/${property.id}`}
