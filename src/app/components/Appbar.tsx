@@ -35,7 +35,7 @@ const Appbar = ({ children }: Props) => {
       <NavbarContent className="hidden sm:flex gap-4" justify="end"></NavbarContent>
       <NavbarContent justify="end">{children}</NavbarContent>
       <NavbarMenu></NavbarMenu>
-      <Button className="bg-white"><Link href="/user/_components/PurchasePlan">Premium</Link></Button>
+
     </Navbar>
   );
 };

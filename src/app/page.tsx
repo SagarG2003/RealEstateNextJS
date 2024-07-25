@@ -78,7 +78,7 @@ export default async function Home({ searchParams }: Props) {
         <div className="w-1/2 p-4"><h3 className="pl-10 font-bold text-gray-400 leading-10">POST YOUR PROPERTY</h3>
         <h1 className="text-3xl pl-10 font-bold leading-10">Register to post your property</h1>
         <h3 className="pl-10 text-gray-600 leading-10">Sell or rent your residential/ commercial property</h3><br></br>
-        <Button className="ml-10 w-72 bg-sky-400 font-bold text-lg text-white"><Link href="/user/_components/PurchasePlan">Post you property for free</Link></Button>
+        <Button className="ml-10 w-80 bg-sky-400 font-bold text-lg text-white ring-4 ring-[#2e2f80] ring-offset-2"><Link href="/user/_components/PurchasePlan">Post you first property for free</Link></Button>
         </div>
       </div>
       <MapProvider>

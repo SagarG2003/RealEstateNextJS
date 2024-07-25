@@ -39,7 +39,7 @@ const PropertyCard = ({ property }: Props) => {
       <div className="flex flex-col mt-auto">
         <div className="p-4">
           <p className="text-primary-600 text-xl font-bold">{property.name}</p>
-          <p className="text-slate-600">
+          <p className="text-slate-700">
             {property.location?.city}, {property.location?.state}
           </p>
         </div>

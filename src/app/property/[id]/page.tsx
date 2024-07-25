@@ -25,21 +25,22 @@ const PropertyPage = async ({ params }: Props) => {
   });
   if (!property) return notFound();
   return (
-    <div className="mt-4">
-      <PageTitle title="Property Page" href="/" linkCaption="Back to Properties" />
-      <div className="p-4">
-        <h2 className="text-black text-3xl font-bold text-center my-1">{property.name}</h2>
-        <p className="text-lg font-bold text-slate-600 mt-4 text-right pr-3">{property.description}</p>
+    <div className="mt-3">
+      {/* <PageTitle title="Property Page" href="/" linkCaption="Back to Properties" /> */}
+      <div className="p-7">
+       <div className="w-1/3 h-24 mx-auto border-5 border-[#2e2f80] rounded-lg shadow-lg"><h2 className="text-black text-3xl font-bold text-center py-7">{property.name}</h2></div>
+        <div className="flex flex-row">
+        <h2 className="text-2xl font-bold text-gray-700 my-7 w-1/2 pl-3">
+            INR {property.price} / {property.status.value}
+            </h2>
+        <h2 className="text-lg font-bold text-slate-600 my-7 w-1/2 text-right pr-3">{property.description}</h2>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="col-span-2">
             <ImagesSlider images={images} />
-            <h2 className="text-2xl font-bold text-gray-700 mt-7">
-            INR {property.price} / {property.status.value}
-            </h2>
-
             {/* <p className="text-lg font-bold text-slate-600 mt-7 m">{property.description}</p> */}
           </div>
-          <Card className="p-5 flex flex-col gap-1 border-black border-r-large">
+          <Card className="p-5 flex flex-col gap-1 border-black border-y-large">
             <Title title="Features" />
             <Attribute label="Bedrooms" value={property.feature?.bedrooms} />
             <Attribute label="Bathrooms" value={property.feature?.bathrooms} />

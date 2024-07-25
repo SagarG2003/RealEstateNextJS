@@ -24,13 +24,14 @@ const signInPanel = async () => {
   }
 
   return (
-    <div className="flex gap-3">
-      <Button color="primary">
+    <div className="flex gap-4">
+      <Button variant="bordered" className="text-white">
         <LoginLink>Sign In</LoginLink>
       </Button>
-      <Button>
+      <Button variant="bordered" className="text-white">
         <RegisterLink>Sign Up</RegisterLink>
       </Button>
+      <Button variant="bordered" className="text-white border-amber-500"><LoginLink>Premium</LoginLink></Button>
     </div>
   );
 };
