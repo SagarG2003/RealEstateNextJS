@@ -81,6 +81,7 @@ export default async function Home({ searchParams }: Props) {
         <Button className="ml-10 w-80 bg-sky-400 font-bold text-lg text-white ring-4 ring-[#2e2f80] ring-offset-2"><Link href="/user/_components/PurchasePlan">Post you first property for free</Link></Button>
         </div>
       </div>
+      <h1 className="m-2 pt-8 text-center text-3xl italic hover:not-italic font-bold">Locate your dream house</h1>
       <MapProvider>
         <MapComponent />
       </MapProvider>

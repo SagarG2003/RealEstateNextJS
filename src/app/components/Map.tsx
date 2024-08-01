@@ -1,7 +1,7 @@
 'use client'
 import {  GoogleMap, MarkerF } from "@react-google-maps/api";
 
-  const defaultMapContainerStyle = {
+const defaultMapContainerStyle = {
   width: '100%',
   height: '70vh',
   borderRadius: '15px 15px 15px 15px',
@@ -19,7 +19,7 @@ const defaultMapOptions = {
   zoomControl: true,
   tilt: 0,
   gestureHandling: 'auto',
-  mapTypeId: google.maps.MapTypeId.HYBRID, //google.maps.MapTypeId.HYBRID
+  mapTypeId: google.maps.MapTypeId.HYBRID, //google.maps.MapTypeId.HYBRID / satellite
 };
 
 const MapComponent = () => {

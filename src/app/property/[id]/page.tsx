@@ -25,10 +25,10 @@ const PropertyPage = async ({ params }: Props) => {
   });
   if (!property) return notFound();
   return (
-    <div className="mt-3">
+    <div className="mt-1">
       {/* <PageTitle title="Property Page" href="/" linkCaption="Back to Properties" /> */}
       <div className="p-7">
-       <div className="w-1/3 h-24 mx-auto border-5 border-[#2e2f80] rounded-lg shadow-lg"><h2 className="text-black text-3xl font-bold text-center py-7">{property.name}</h2></div>
+       <div className="w-1/4 h-24 mx-auto border-5 border-[#2e2f80] rounded-lg shadow-lg"><h2 className="text-black text-3xl font-bold text-center py-7">{property.name}</h2></div>
         <div className="flex flex-row">
         <h2 className="text-2xl font-bold text-gray-700 my-7 w-1/2 pl-3">
             INR {property.price} / {property.status.value}
@@ -50,7 +50,7 @@ const PropertyPage = async ({ params }: Props) => {
             <Title title="Address" className="mt-7" />
             <Attribute label="City" value={property.location?.city} />
             <Attribute label="Landmarks" value={property.location?.landmark} />
-            <Attribute label="Zip Code" value={property.location?.zip} />
+            <Attribute label="Pin Code" value={property.location?.zip} />
             <Attribute label="Address" value={property.location?.streetAddress} />
 
             <Title title="Owner Details" className="mt-7" />
