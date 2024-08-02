@@ -21,7 +21,7 @@ const ProfilePage = async () => {
 
   return (
     <div>
-      <PageTitle title="My Profile" linkCaption="Back To Home Page" href="/" />
+      {/* <PageTitle title="My Profile" linkCaption="Back To Home Page" href="/" /> */}
       <Card className="m-4 p-4  flex flex-col gap-5">
         <SectionTitle title="Basic Information" />
         <div className="flex">

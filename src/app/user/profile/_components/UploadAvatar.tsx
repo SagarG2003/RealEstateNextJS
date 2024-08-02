@@ -35,7 +35,7 @@ const UploadAvatar = ({ userId }: { userId: string }) => {
               <ModalHeader className="flex flex-col gap-1">Upload Avatar</ModalHeader>
               <ModalBody>
                 <FileInput onChange={(e) => setImage((e as any).target.files[0])} />
-                {image && <Image src={URL.createObjectURL(image)} />}
+                {image && <Image src={URL.createObjectURL(image)} alt="error" />}
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>
