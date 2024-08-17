@@ -53,7 +53,7 @@ export async function editProperty(
     },
     data: {
       name: propertyData.name,
-      // price: propertyData.price,
+      price: propertyData.price.toString(),
       statusId: propertyData.statusId,
       typeId: propertyData.typeId,
       description: propertyData.description,

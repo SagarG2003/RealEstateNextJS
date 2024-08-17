@@ -62,7 +62,7 @@ const AddPropertyForm = ({ isEdit = false, ...props }: Props) => {
       propertyFeature: props.property?.feature ?? undefined,
       description: props.property?.description ?? undefined,
       name: props.property?.name ?? undefined,
-      // price: props.property?.price ?? undefined,
+      price: props.property?.price ?? undefined,
       statusId: props.property?.statusId ?? undefined,
       typeId: props.property?.typeId ?? undefined,
     },
