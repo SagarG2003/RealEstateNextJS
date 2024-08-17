@@ -28,7 +28,7 @@ const PropertyPage = async ({ params }: Props) => {
     <div className="mt-1">
       {/* <PageTitle title="Property Page" href="/" linkCaption="Back to Properties" /> */}
       <div className="p-7">
-       <div className="w-1/4 h-24 mx-auto border-5 border-[#2e2f80] rounded-lg shadow-lg"><h2 className="text-black text-3xl font-bold text-center py-7">{property.name}</h2></div>
+       <div className="w-1/4 h-26 mx-auto border-5 border-[#2e2f80] rounded-lg shadow-lg"><h2 className="text-black text-3xl font-bold text-center py-7">{property.name}</h2></div>
         <div className="flex flex-row">
         <h2 className="text-2xl font-bold text-gray-700 my-7 w-1/2 pl-3">
             INR {property.price} / {property.status.value}

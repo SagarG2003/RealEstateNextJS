@@ -10,7 +10,7 @@ interface Props {
 const PictureCard = ({ src, onDelete, index }: Props) => {
   return (
     <Card className="flex flex-col items-center">
-      <Image src={src} className="w-36 h-36 object-contain" />
+      <Image src={src} className="w-36 h-36 object-contain" alt="error" />
       <button className="mb-2" onClick={() => onDelete(index)}>
         <TrashIcon className="text-danger-400 w-4" />
       </button>

@@ -21,6 +21,7 @@ const PropertiesPage = async ({ searchParams }: Props) => {
     include: {
       type: true,
       status: true,
+      images: true,
     },
     skip: +pagenum * PAGE_SIZE,
     take: PAGE_SIZE,

@@ -90,54 +90,6 @@ export async function GET() {
     });
   }
 
-  // await prisma.subscriptionPlan.create({
-  //   data: {
-  //     name: "Basic",
-  //     imagesPerPropertyLimit: 3,
-  //     propertyLimit: 3,
-  //     price: 0,
-  //     features: `Free for lifetime",
-  //     Property Listing,
-  //     Property Details,
-  //     3 Images per Property,
-  //     3 Properties Limit,
-  //     Property Search`,
-  //   },
-  // });
-  // await prisma.subscriptionPlan.create({
-  //   data: {
-  //     name: "Standard",
-  //     price: 10,
-  //     propertyLimit: 10,
-  //     imagesPerPropertyLimit: 5,
-  //     features: `roperty Listing,
-  //         Property Details,
-  //         5 Images per Property,
-  //         10 Properties Limit,
-  //         Property Search,
-  //         AI Support,
-  //         24/7 Support on Email,`,
-  //   },
-  // }),
-  //   await prisma.subscriptionPlan.create({
-  //     data: {
-  //       name: "Premium",
-  //       price: 25,
-  //       propertyLimit: 100,
-  //       imagesPerPropertyLimit: 15,
-  //       features: `
-  //         Property Listing,
-  //         Property Details,
-  //         15 Images per Property,
-  //         100 Properties Limit,
-  //         Property Search,
-  //         AI Support,
-  //         24/7 Support on Email,
-  //         24/7 Support on Phone,
-  //         Personal Account Manager`,
-  //     },
-  //   });
-
   console.log("seeding finished!");
 
   console.log("migration ended...");

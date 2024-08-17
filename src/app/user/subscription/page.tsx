@@ -13,13 +13,15 @@ const SubscriptionPage = async () => {
       <PageTitle title="Subscription Plans" />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 p-4">
         {subscriptionPlans.map((item) => (
-          <Plan plan={item} />
+          <Plan key={item.id} plan={item} />
         ))}
       </div>
     </div>
   );
 };
+
 export default SubscriptionPage;
+
 const Plan = ({ plan }: { plan: SubscriptionPlan }) => {
   return (
     <div className="border rounded shadow flex flex-col gap-5 justify-between p-5">
@@ -29,8 +31,8 @@ const Plan = ({ plan }: { plan: SubscriptionPlan }) => {
       </h1>
       <hr />
       <div className="flex flex-col gap-1 text-center">
-        {plan.features.split(",").map((feature) => (
-          <p className="text-slate-500 text-sm">{feature.trim()}</p>
+        {plan.features.split(",").map((feature, index) => (
+          <p key={index} className="text-slate-500 text-sm">{feature.trim()}</p>
         ))}
       </div>
       <PurchasePlan plan={plan} />

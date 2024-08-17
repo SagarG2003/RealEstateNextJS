@@ -31,7 +31,7 @@ const PropertiesTable = ({ properties, totalPages, currentPage }: Props) => {
   const router = useRouter();
   return (
     <div className="flex flex-col items-center gap-4">
-      <Table>
+      {/* <Table>
         <TableHeader>
           <TableColumn>NAME</TableColumn>
           <TableColumn>PRICE</TableColumn>
@@ -68,7 +68,7 @@ const PropertiesTable = ({ properties, totalPages, currentPage }: Props) => {
             </TableRow>
           ))}
         </TableBody>
-      </Table>
+      </Table> */}
       <Pagination
         total={totalPages}
         initialPage={1}

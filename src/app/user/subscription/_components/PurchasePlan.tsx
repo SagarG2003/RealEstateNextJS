@@ -1,5 +1,4 @@
 "use client";
-import { fa } from "@faker-js/faker";
 import { ShoppingBagIcon } from "@heroicons/react/16/solid";
 import { Button } from "@nextui-org/react";
 import { SubscriptionPlan } from "@prisma/client";
@@ -17,21 +16,24 @@ type Props = {
 };
 const PurchasePlan = ({ plan }: Props) => {
   const [showCheckout, setShowCheckout] = useState(false);
-  const [clientSecret, setClientSecret] = useState<string | null>("");
+  const [clientSecret, setClientSecret] = useState<string | null>(null); // Start with null
   const [isLoading, setIsLoading] = useState(false);
   const { user } = useKindeBrowserClient();
 
   const intiatePayment = async () => {
     setIsLoading(true);
+    const priceInCents = Number(plan.price) * 100; // Convert plan.price to a number if it's not already
     const paymentIntent = await createPaymentIntent(
-      plan.price * 100,
-      `Payment of the user ${user?.given_name} ${user?.family_name} for buying ${plan.name}. `
+      priceInCents,
+      `Payment of the user ${user?.given_name} ${user?.family_name} for buying ${plan.name}.`
     );
     setClientSecret(paymentIntent.client_secret);
     setShowCheckout(true);
     setIsLoading(false);
   };
-  if (plan.price === 0) return <Button>Try it for free!</Button>;
+
+  // if (plan.price === 0) return <Button>Try it for free!</Button>;
+
   return (
     <>
       <Button
@@ -42,7 +44,7 @@ const PurchasePlan = ({ plan }: Props) => {
       >
         Purchase Subscription
       </Button>
-      {clientSecret!! && (
+      {clientSecret && (
         <Elements
           stripe={stripePromise}
           options={{

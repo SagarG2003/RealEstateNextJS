@@ -1,6 +1,6 @@
-"use client";
-const ClientComponent = () => {
-  return <ServerComponent />;
-};
+// "use client";
+// const ClientComponent = () => {
+//   return <ServerComponent />;
+// };
 
-export default ClientComponent;
+// export default ClientComponent;
