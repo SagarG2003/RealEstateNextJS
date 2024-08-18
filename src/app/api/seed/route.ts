@@ -29,7 +29,7 @@ export async function GET() {
       data: {
         description: faker.location.direction(),
         name: faker.company.name(),
-        price: faker.number.int({ max: 2000000, min: 100000 }).toString(),
+        price: faker.number.int({ max: 2000000, min: 100000 }),
         status: {
           connect: {
             id: faker.number.int({ max: 3, min: 1 }),

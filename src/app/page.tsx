@@ -72,7 +72,7 @@ export default async function Home({ searchParams }: Props) {
         {properties.map((propertyItem: {
           id: number;
           name: string;
-          price: string;
+          price: number;
           location: { city: string; state: string; } | null;
           images: { url: string; }[];
         }) => (
