@@ -2,6 +2,7 @@ import prisma from "@/lib/prisma";
 import Image from "next/image";
 import PropertyCard from "./components/PropertyCard";
 import PropertyContainer from "./components/PropertyContainer";
+import Footer from "./components/footer";
 import { MapProvider } from "./components/map-provider";
 import { MapComponent } from "./components/Map";
 import { Button } from "@nextui-org/react";
@@ -11,7 +12,7 @@ import { components } from "react-select";
 import signInPanel from "./components/signInPanel";
 import { Key } from "react";
 
-const PAGE_SIZE = 8;
+const PAGE_SIZE = 8; 
 
 interface Props {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -93,6 +94,7 @@ export default async function Home({ searchParams }: Props) {
       <MapProvider>
         <MapComponent />
       </MapProvider>
+      <Footer />
     </div>
   );
 }
