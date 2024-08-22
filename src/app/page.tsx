@@ -11,6 +11,7 @@ import App from "next/app";
 import { components } from "react-select";
 import signInPanel from "./components/signInPanel";
 import { Key } from "react";
+import CityDropdown from "./components/citydropdown";
 
 const PAGE_SIZE = 8; 
 
@@ -91,6 +92,7 @@ export default async function Home({ searchParams }: Props) {
         </div>
       </div>
       <h1 className="m-2 pt-8 text-center text-3xl italic hover:not-italic font-bold">Locate your dream house</h1>
+      <CityDropdown />
       <MapProvider>
         <MapComponent />
       </MapProvider>
