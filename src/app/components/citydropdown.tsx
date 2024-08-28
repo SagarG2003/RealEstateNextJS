@@ -11,7 +11,9 @@ const cities: CityOption[] = [
   { value: 'New Delhi', label: 'New Delhi' },
   { value: 'Gurgaon', label: 'Gurgaon' },
   { value: 'Mumbai', label: 'Mumbai' },
-  { value: 'Chandigarh', label: 'Chandigarh'}
+  { value: 'Chandigarh', label: 'Chandigarh'},
+  { value: 'Banglore', label: 'Banglore'},
+  { value: 'Chennai', label: 'Chennai'}
 ];
 
 function CityDropdown() {
