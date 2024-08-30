@@ -11,6 +11,7 @@ interface Props {
   statuses: PropertyStatus[];
   next: () => void;
 }
+
 const Basic = (props: Props) => {
   const {
     register,
@@ -18,9 +19,15 @@ const Basic = (props: Props) => {
     trigger,
     getValues,
   } = useFormContext<AddPropertyInputType>();
+
   const handleNext = async () => {
     if (await trigger(["name", "description", "typeId", "statusId", "price"])) props.next();
   };
+
+  // Get values with default fallback
+  const typeId = getValues().typeId?.toString() || "";
+  const statusId = getValues().statusId?.toString() || "";
+  const price = getValues().price?.toString() || "";
 
   return (
     <Card className={cn("p-2 gap-3 grid grid-cols-1 md:grid-cols-3", props.className)}>
@@ -42,7 +49,6 @@ const Basic = (props: Props) => {
         name="description"
         defaultValue={getValues().description}
       />
-
       <Select
         {...register("typeId", { setValueAs: (v: any) => v.toString() })}
         errorMessage={errors.typeId?.message}
@@ -50,7 +56,7 @@ const Basic = (props: Props) => {
         label="Type"
         selectionMode="single"
         name="typeId"
-        defaultSelectedKeys={[getValues().typeId.toString()]}
+        defaultSelectedKeys={[typeId]}
       >
         {props.types.map((item) => (
           <SelectItem key={item.id} value={item.id}>
@@ -65,7 +71,7 @@ const Basic = (props: Props) => {
         label="Status"
         selectionMode="single"
         name="statusId"
-        defaultSelectedKeys={[getValues().statusId.toString()]}
+        defaultSelectedKeys={[statusId]}
       >
         {props.statuses.map((item) => (
           <SelectItem key={item.id} value={item.id}>
@@ -79,7 +85,7 @@ const Basic = (props: Props) => {
         isInvalid={!!errors.price}
         label="Price"
         name="price"
-        defaultValue={getValues().price.toString()}
+        defaultValue={price}
       />
       <div className="flex justify-center col-span-3 gap-3">
         <Button

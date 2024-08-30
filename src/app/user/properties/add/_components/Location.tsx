@@ -9,6 +9,7 @@ interface Props {
   prev: () => void;
   className?: string;
 }
+
 const Location = (props: Props) => {
   const {
     register,
@@ -16,6 +17,7 @@ const Location = (props: Props) => {
     trigger,
     getValues,
   } = useFormContext<AddPropertyInputType>();
+
   const handleNext = async () => {
     if (
       await trigger([
@@ -25,18 +27,23 @@ const Location = (props: Props) => {
         "location.zip",
         "location.region",
       ])
-    )
+    ) {
       props.next();
+    }
   };
+
+  // Ensure location is defined before accessing properties
+  const location = getValues().location || {};
+
   return (
-    <Card className={cn("p-2  grid grid-cols-1 md:grid-cols-2 gap-3", props.className)}>
+    <Card className={cn("p-2 grid grid-cols-1 md:grid-cols-2 gap-3", props.className)}>
       <Input
         {...register("location.streetAddress")}
         errorMessage={errors.location?.streetAddress?.message}
         isInvalid={!!errors.location?.streetAddress}
         label="Street Address"
         name="location.streetAddress"
-        defaultValue={getValues().location.streetAddress}
+        defaultValue={location.streetAddress || ""}
       />
 
       <Input
@@ -44,7 +51,7 @@ const Location = (props: Props) => {
         errorMessage={errors.location?.zip?.message}
         isInvalid={!!errors.location?.zip}
         label="Zip/Postal Code"
-        defaultValue={getValues().location.zip}
+        defaultValue={location.zip || ""}
       />
 
       <Input
@@ -52,7 +59,7 @@ const Location = (props: Props) => {
         errorMessage={errors.location?.city?.message}
         isInvalid={!!errors.location?.city}
         label="City"
-        defaultValue={getValues().location.city}
+        defaultValue={location.city || ""}
       />
 
       <Input
@@ -60,7 +67,7 @@ const Location = (props: Props) => {
         errorMessage={errors.location?.state?.message}
         isInvalid={!!errors.location?.state}
         label="State"
-        defaultValue={getValues().location.state}
+        defaultValue={location.state || ""}
       />
 
       <Input
@@ -69,7 +76,7 @@ const Location = (props: Props) => {
         isInvalid={!!errors.location?.region}
         label="Region/Neighborhood"
         className="col-span-2"
-        defaultValue={getValues().location.region}
+        defaultValue={location.region || ""}
       />
 
       <Textarea
@@ -78,7 +85,7 @@ const Location = (props: Props) => {
         isInvalid={!!errors.location?.landmark}
         label="Landmarks"
         className="col-span-2"
-        defaultValue={getValues().location.landmark}
+        defaultValue={location.landmark || ""}
       />
       <div className="flex justify-center col-span-2 gap-3">
         <Button

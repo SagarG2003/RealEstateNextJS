@@ -9,12 +9,12 @@ interface Props {
 const PropertiesLayout = ({ children, modalDelete }: Props) => {
   return (
     <div>
-      <div className="bg-primary-400 flex justify-between items-center p-2">
-        <h2 className="text-white text-xl font-semibold px-2">User Properties</h2>
-        <Button color="secondary">
+      {/* <div className="flex justify-between items-center p-2 mx-2 my-6 rounded-md"> */}
+        <h2 className="text-black text-2xl font-semibold py-8 text-center">User Properties</h2>
+        <Button color="secondary" className="ml-6 my-2">
           <Link href="/user/properties/add">Add Property</Link>
         </Button>
-      </div>
+      {/* </div> */}
       {children}
       <div>{modalDelete}</div>
     </div>

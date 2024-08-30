@@ -8,7 +8,6 @@ interface location {
   lat: number;
   lng: number;
   name: string;
-  color: string;
 }
 
 const defaultMapContainerStyle = {
@@ -23,9 +22,9 @@ const defaultMapCenter = {
 }
 
 const locations = [
-  { lat: 28.565609, lng: 77.096050, name: 'Agrawal Luxury Floors', color: 'red' },
-  { lat: 28.480340, lng: 77.091320, name: 'DLF Limited', color: 'green' },
-  { lat: 28.609110, lng: 77.080370, name: 'Emaar India', color: 'blue' },
+  { lat: 28.565609, lng: 77.096050, name: 'Agrawal Luxury Floors' },
+  { lat: 28.480340, lng: 77.091320, name: 'DLF Limited' },
+  { lat: 28.609110, lng: 77.080370, name: 'Emaar India' },
 ];
 
 const defaultMapZoom = 10
@@ -53,10 +52,8 @@ const MapComponent = () => {
               center={{ lat: location.lat, lng: location.lng }}
               radius={1000}
               options={{
-                strokeColor: location.color,
                 strokeOpacity: 0.8,
                 strokeWeight: 2,
-                fillColor: location.color,
                 fillOpacity: 0.5
               }}
             />

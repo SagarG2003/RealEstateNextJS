@@ -9,6 +9,7 @@ interface Props {
   prev: () => void;
   className?: string;
 }
+
 const Features = (props: Props) => {
   const {
     register,
@@ -17,6 +18,7 @@ const Features = (props: Props) => {
     trigger,
     getValues,
   } = useFormContext<AddPropertyInputType>();
+
   const handleNext = async () => {
     if (
       await trigger([
@@ -25,17 +27,22 @@ const Features = (props: Props) => {
         "propertyFeature.bedrooms",
         "propertyFeature.parkingSpots",
       ])
-    )
+    ) {
       props.next();
+    }
   };
+
+  // Ensure propertyFeature is defined before accessing properties
+  const propertyFeature = getValues().propertyFeature || {};
+
   return (
-    <Card className={cn("p-2  grid grid-cols-1 md:grid-cols-2 gap-3", props.className)}>
+    <Card className={cn("p-2 grid grid-cols-1 md:grid-cols-2 gap-3", props.className)}>
       <Input
         {...register("propertyFeature.bedrooms")}
         errorMessage={errors.propertyFeature?.bedrooms?.message}
         isInvalid={!!errors.propertyFeature?.bedrooms}
         label="Bedrooms"
-        defaultValue={getValues().propertyFeature.bedrooms.toString()}
+        defaultValue={propertyFeature.bedrooms?.toString() || ""}
       />
 
       <Input
@@ -43,14 +50,15 @@ const Features = (props: Props) => {
         errorMessage={errors.propertyFeature?.bathrooms?.message}
         isInvalid={!!errors.propertyFeature?.bathrooms}
         label="Bathrooms"
-        defaultValue={getValues().propertyFeature.bathrooms.toString()}
+        defaultValue={propertyFeature.bathrooms?.toString() || ""}
       />
+
       <Input
         {...register("propertyFeature.parkingSpots")}
         errorMessage={errors.propertyFeature?.parkingSpots?.message}
         isInvalid={!!errors.propertyFeature?.parkingSpots}
         label="Parking Spots"
-        defaultValue={getValues().propertyFeature.parkingSpots.toString()}
+        defaultValue={propertyFeature.parkingSpots?.toString() || ""}
       />
 
       <Input
@@ -58,9 +66,10 @@ const Features = (props: Props) => {
         errorMessage={errors.propertyFeature?.area?.message}
         isInvalid={!!errors.propertyFeature?.area}
         label="Area"
-        defaultValue={getValues().propertyFeature.area.toString()}
+        defaultValue={propertyFeature.area?.toString() || ""}
       />
-      <div className="flex items-center justify-between ">
+
+      <div className="flex items-center justify-between">
         <Controller
           control={control}
           name="propertyFeature.hasSwimmingPool"
@@ -68,7 +77,7 @@ const Features = (props: Props) => {
             <Checkbox
               onChange={field.onChange}
               onBlur={field.onBlur}
-              defaultValue={getValues().propertyFeature.hasSwimmingPool ? "true" : "false"}
+              checked={!!propertyFeature.hasSwimmingPool}
             >
               Has Swimming Pool
             </Checkbox>
@@ -82,9 +91,9 @@ const Features = (props: Props) => {
             <Checkbox
               onChange={field.onChange}
               onBlur={field.onBlur}
-              defaultValue={getValues().propertyFeature.hasGardenYard ? "true" : "false"}
+              checked={!!propertyFeature.hasGardenYard}
             >
-              Has Gard/Yard
+              Has Garden/Yard
             </Checkbox>
           )}
         />
@@ -96,13 +105,14 @@ const Features = (props: Props) => {
             <Checkbox
               onChange={field.onChange}
               onBlur={field.onBlur}
-              defaultValue={getValues().propertyFeature.hasBalcony ? "true" : "false"}
+              checked={!!propertyFeature.hasBalcony}
             >
               Has Balcony/Patio
             </Checkbox>
           )}
         />
       </div>
+      
       <div className="flex justify-center col-span-2 gap-3">
         <Button
           onClick={props.prev}
