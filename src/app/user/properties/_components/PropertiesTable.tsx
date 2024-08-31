@@ -32,7 +32,7 @@ const PropertiesTable = ({ properties, totalPages, currentPage }: Props) => {
   const router = useRouter();
   return (
     <div className="flex flex-col items-center gap-4">
-      <Table>
+      <Table className="px-6 ">
         <TableHeader>
           <TableColumn>NAME</TableColumn>
           <TableColumn>PRICE</TableColumn>
