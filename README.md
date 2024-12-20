@@ -10,7 +10,7 @@
 
 Here're some of the project's best features:
 
-*   Users can buy and sell their properties on the website.
+*   Users can add their properties for sell and buy other properties.
 *   Integrated with Google Maps for real time display of property locations
 *   Immersive 3D virtual tour experience of the property.
 *   Responsiveness UI styled with tailwind CSS
