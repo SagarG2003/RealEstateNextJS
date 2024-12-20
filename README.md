@@ -59,6 +59,12 @@ Technologies used in the project:
 *   Google Maps API
 
 
+
+<h2> Demo Video <h/2>
+
+![](https://github.com/SagarG2003/RealEstateNextJS/blob/main/gifmaker_me.gif)
+
+
 <h2>🍰 Contribution Guidelines:</h2>
 
 Contributions are welcome! Please fork the repository and submit a pull request for review.
