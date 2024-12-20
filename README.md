@@ -14,7 +14,7 @@ Here're some of the project's best features:
 *   Integrated with Google Maps for real time display of property locations
 *   Immersive 3D virtual tour experience of the property.
 *   Responsiveness UI styled with tailwind CSS
-*   User authentication with Google and X
+*   User two factor authentication(2FA) with Google and X
 
 
 <h2>🛠️ Installation Steps:</h2>
