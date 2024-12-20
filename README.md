@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center" id="title">SG Real Estate</h1>
 
-## Getting Started
+<p align="center"><img src="https://socialify.git.ci/SagarG2003/RealEstateNextJS/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
-First, run the development server:
+<p id="description">SG Real Estate is a Real Estate Web Application built using Next.js and TypeScript integrated with Google Maps to display property locations. Users can buy and sell their properties through the website. Integrated with an immersive 3D virtual tour experience.</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  
+  
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
+
+*   Users can buy and sell their properties on the website.
+*   Integrated with Google Maps for real time display of property locations
+*   Immersive 3D virtual tour experience of the property.
+*   Responsiveness UI styled with tailwind CSS
+*   User authentication with Google and X
+
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Clone the Repo</p>
+
+```
+git clone https://github.com/yourusername/real-estate-project.git cd real-estate-project
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p>2. Install Dependencies</p>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install # or yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<p>3. Set Up environment variables</p>
 
-## Learn More
+```
+DATABASE_URL="your-database-connection-string" GOOGLE_MAPS_API_KEY="your-google-maps-api-key"
+```
 
-To learn more about Next.js, take a look at the following resources:
+<p>4. Migrate the database</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npx prisma migrate dev --name init
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<p>5. Start the development server</p>
 
-## Deploy on Vercel
+```
+npm run dev # or yarn dev
+```
+<h2>💻 Built with</h2>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Technologies used in the project:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+*   NextJS
+*   TypeScript
+*   TailwindCSS
+*   SQL with Prisma ORM
+*   Google Maps API
+
+
+<h2>🍰 Contribution Guidelines:</h2>
+
+Contributions are welcome! Please fork the repository and submit a pull request for review.
+
+
+
+<h2>🛡️ License:</h2>
+
+This project is licensed under the This project is licensed under the MIT License. See the LICENSE file for details.
+
