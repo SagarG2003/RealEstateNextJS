@@ -27,7 +27,7 @@ const Appbar = ({ children }: Props) => {
           className="sm:hidden"
         />
         <NavbarBrand>
-            <p className="pl-20 font-bold text-white text-xl">SG Real Estate</p>
+            <p className="pl-20 font-bold text-white text-xl">AdobeX</p>
         </NavbarBrand>
         <Search></Search>
       </NavbarContent>
